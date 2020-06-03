@@ -1,0 +1,477 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
+@media screen and (max-width: 1200px)
+  .title-text
+    font-size: 54px
+
+  /* top */
+  .top
+    &__title  
+      font-size: 54px
+  
+  /* surf */
+  .surf
+    &__text
+      font-size: 44px
+      
+  /* download */
+  .download
+    &__btn
+      margin-bottom: 15px
+
+
+
+// ≥992px
+@media screen and (max-width: 992px)
+  .title-text
+    font-size: 48px
+
+  /* header */
+  .header
+    
+    &__wrap
+      display: none
+      position: absolute
+      z-index: 100
+      top: 85px
+      width: 100%
+      background-color: rgba(#4285F4,0.9)
+
+      &_scroll
+        background-color: rgba(#2D2D2D,0.9)
+        
+    &__buttons
+      display: flex
+      flex-direction: column
+      align-items: center
+      padding-top: 20px
+      padding-bottom: 20px
+
+      .download__btn
+        margin-right: 0
+
+    &__toggle
+      position: absolute
+      right: 40px
+      top: 0
+      z-index: 10
+      display: block
+      height: 100%
+      width: 50px
+
+    .toggle-mnu
+      position: absolute
+      top: 50%
+      display: block
+      width: 50px
+      height: 35px
+      padding: 7px
+      transform: translateY(-50%)
+      
+      span:after, span:before 
+        content: ""
+        position: absolute
+        right: 0
+        top: 9px
+
+      span:after
+        top: 18px
+
+      span 
+        position: relative
+        display: block
+
+      span, span:after, span:before
+        width: 100%
+        height: 3px 
+        background-color: #ffffff
+        transition: $slowdown
+        backface-visibility: hidden
+  
+    .toggle-mnu_open
+      span 
+        background-color: inherit
+        &::after
+          height: 4px 
+          background-color: #ffffff
+          transform: translateY(-5px) rotate(45deg)
+
+        &::before
+          height: 4px 
+          background-color: #ffffff
+          transform: translateY(4px) rotate(-45deg)
+
+  /* menu */
+  .menu
+    border-bottom: 1px solid rgba(#ffffff, 0.12)
+
+    &_footer
+      border-bottom: none
+
+    &__list
+      display: flex
+      flex-direction: column
+      margin: 0 20px
+      padding: 20px 0
+
+    &__item
+      margin: 10px
+
+    &__link
+      &:hover
+        border-bottom: none
+
+  /* select */
+  .select
+    width: 104px
+    margin: 0 auto
+    margin-bottom: 20px
+
+    &_open
+      border-radius: 0 0 20px 20px
+
+    &__list
+      top: auto
+      bottom: 30px
+      border: 2px solid rgba(#ffffff, 0.2)
+      border-bottom: none
+      border-radius: 20px 20px 0 0
+
+  /* top */
+  .top
+    &__image
+      display: none
+
+  /* middle */
+  .middle
+    &__title
+      font-size: 30px
+
+    &__text
+      font-size: 18px
+
+  /* open-block */
+  .open-block
+    &__image
+      width: 120px
+
+    &__image-main
+      width: 220px
+
+    &__images
+      &::before
+        bottom: -150px
+
+  /* surf */
+  .surf
+    padding: 100px 0
+
+  /* bottom */
+  .bottom
+    &__main-image
+      display: none
+
+  /* section modal */
+  .modal
+    max-width: 750px
+
+  .modal-top
+    &__logo
+      margin: 15px 30px 15px 20px
+
+    &__header
+      margin-bottom: 0
+      font-size: 24px
+      line-height: 1.1
+
+    &__body
+      padding: 30px
+
+    &__block
+      height: 260px
+      padding: 20px
+
+    &__title
+      margin-bottom: 20px
+
+    &__text
+      margin-bottom: 20px
+
+  .btn_modal
+    margin: 10px 0
+
+// ≥768px
+@media screen and (max-width: 768px)
+  .title-text
+    font-size: 26px
+  .text-center
+    font-size: 16px
+
+  .desktop
+    display: none
+
+  .mobile
+    display: block
+    height: 300px
+
+  /* top */
+  .top
+    padding: 30px 0
+
+    &__title
+      margin-bottom: 20px
+      font-size: 30px
+
+    &__text
+      margin-bottom: 30px
+      font-size: 16px
+  
+    &__list
+      width: 80%
+
+    &__item
+      width: 50%
+      margin-right: 0
+      margin-bottom: 20px
+
+  /* middle */
+  .middle
+    padding: 50px 0
+    &__image
+      display: none
+
+    &__content
+      width: 100%
+
+      &-wrap
+        align-items: flex-start
+        flex-direction: row
+
+    &__number
+      display: block
+      width: 55px
+      margin-right: 20px
+      
+    &__title
+      font-size: 24px
+
+    &__text
+      font-size: 17px
+
+    &__block
+      margin-top: 40px
+
+    &__btn
+      margin: 20px auto
+      margin-bottom: 0
+
+    &__open-block 
+      padding: 30px 20px
+
+  .open-block
+    &__images
+      &::before
+        left: 30px
+        right: 30px
+        bottom: -150px
+
+    &__image
+      width: 80px
+    
+  /* surf */
+  .surf
+    position: relative
+    padding-top: 40px
+    background-image: url(../img/bg__surf_320.png)
+    background-position: center bottom
+    background-size: cover
+    &::before
+      content: ''
+      position: absolute
+      bottom: 30px
+      left: 50%
+      width: 300px
+      height: 330px
+      background-image: url(../img/surf__character.png)
+      background-repeat: no-repeat
+      background-position: center
+      background-size: contain
+      transform: translateX(-50%)
+
+    &__text
+      margin-bottom: 300px
+      font-size: 36px
+
+  /* bottom */
+  .bottom
+    &__item
+      width: 100%
+      margin-left: 0
+
+  /* download */
+  .download
+    &__title
+      font-size: 30px
+    &__text
+      font-size: 20px
+
+  /* footer */
+  .footer
+    &__wrap
+      flex-direction: column
+      margin-top: 30px
+
+  .menu_footer
+    margin-left: 0
+    text-align: center
+    font-size: 15px
+
+  /* section modal */
+  .modal
+    width: 500px
+
+  .modal-top
+    &__header
+      font-size: 20px
+      line-height: 1
+
+    &__body
+      padding: 30px
+
+    &__block
+      height: 220px
+      padding: 15px
+
+    &__title
+      margin-bottom: 15px
+      font-size: 24px
+      &_small
+        margin-bottom: 10px
+        font-size: 20px
+
+    &__text
+      margin-bottom: 15px
+      font-size: 14px
+
+  .modal-download
+    
+    &__image
+      display: none
+
+    &__body
+      width: 100%
+
+
+// ≥576px
+@media screen and (max-width: 576px)
+  .btn
+    padding: 20px 40px
+
+  .top-btn
+    right: 30px
+    bottom: 30px
+    padding: 20px
+
+  .logo
+    width: 160px
+
+  /* header */
+  .header
+    height: 85px
+
+    &__toggle
+      right: 25px
+
+    &__buttons
+
+      .download__btn
+        margin: 0 auto
+
+      .download__btn:first-child
+        margin-bottom: 15px
+
+  /* middle */
+  .middle
+    
+    &__title
+      margin-bottom: 0
+
+    &__btn
+      padding: 10px 65px 10px 40px
+      &::before
+        right: 25px
+
+  .open-block
+    &__images
+      &::before
+        bottom: -120px
+
+    &__image
+      width: 50px
+
+  /* surf */
+  .surf
+    &__text
+      margin-bottom: 300px
+      font-size: 24px
+
+  /* download */
+  .download
+    &__wrap
+      padding: 20px 0
+      text-align: center
+
+    &__title
+      font-size: 24px
+    &__text
+      font-size: 19px
+
+    &__btn
+      margin: 0 auto
+      margin-bottom: 15px
+      padding: 13px
+      padding-left: 75px
+  
+  /* section modal */
+  .modal
+    width: 300px
+
+  .modal-top
+    &__head
+      flex-direction: column
+
+    &__logo
+      margin: 10px auto
+
+    &__header
+      text-align: center
+
+      &::before
+        display: none
+
+    &__body
+      padding: 15px
+
+    &__buttons
+      flex-direction: column
+      padding: 20px
+      padding-top: 0
+
+    &__btn
+      margin-bottom: 20px
+      padding: 20px
+
+  .modal-download
+    &__title
+      margin-bottom: 20px
+      font-size: 20px
+      font-weight: 700
+      text-align: center
+
+    &__body
+      padding: 20px
+      padding-top: 30px

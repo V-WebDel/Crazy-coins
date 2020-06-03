@@ -1,0 +1,801 @@
+@import "vars"
+@import "libs"
+@import "fonts"
+
+/*  ---  Мои стили для проекта  ---  */
+
+::placeholder
+  color: #666
+
+::selection
+  background-color: #FCD42D
+  color: #2D2D2D
+
+html
+  overflow-x: hidden
+  box-sizing: border-box
+  background-color: #262626
+
+*, ::before, ::after
+  box-sizing: inherit
+  
+body
+  position: relative
+  min-width: 320px
+  overflow: hidden
+  font-family: $default-regular
+  font-size: 20px
+  line-height: 1.4
+  color: $text
+  
+  input, textarea
+    border: #666 1px solid
+    outline: none
+
+img
+  display: block
+  max-width: 100%
+  height: auto
+
+b, strong
+  font-weight: bold
+
+.btn
+  padding: 20px 70px
+  font-size: 18px
+  font-weight: 700
+  color: #272727
+  text-transform: uppercase
+  background-color: $accent
+  border: none
+  border-radius: 30px
+  box-shadow: 0 5px 6px 3px rgba(0, 0, 0, 0.2)
+  transition: $slowdown
+  cursor: pointer
+  
+  &:hover
+    color: #ffffff
+    text-decoration: none
+    box-shadow: none
+    background-color: #272727
+
+.link-btn
+  display: block
+  width: 250px
+  margin: 0 auto
+  
+  &:hover
+    color: #ffffff
+    text-decoration: none
+  
+.no-btn
+  padding: 0
+  background: none
+  border: none
+  &:active, &:focus
+    outline: none
+  
+.lst
+  margin: 0
+  padding: 0
+  list-style: none
+
+.title-text
+  margin-bottom: 30px
+  font-size: 60px
+  font-weight: 700
+  color: $title
+  text-align: center
+  text-transform: uppercase
+
+.text-center
+  text-align: center
+
+.text-accent
+  color: $accent
+
+.text-blue
+  color: #4987E9
+
+.text-nowrap
+  white-space: nowrap
+
+.text-up
+  text-transform: uppercase
+  
+iframe
+  border: none
+
+.mobile
+  display: none
+
+.col-relative
+  position: relative
+
+.wrap-top
+  background-color: #4285F4
+  background-image: url(../img/bg__top.png)
+  background-repeat: no-repeat
+  background-position: center top
+  background-size: cover
+
+/* Buttom Top*/
+.top-btn
+  position: fixed
+  right: 50px
+  bottom: 50px
+  z-index: 10
+  padding: 0
+  height: 50px
+  width: 50px
+  border-radius: 4px
+  background-color: $accent
+
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 20px
+    height: 20px
+    background-image: url(../img/icons/right-arrow.svg)
+    transform: translate(-50%, -50%) rotate(-90deg)
+
+  &:hover
+    background-color: #4987E9
+    &::before
+      background-image: url(../img/icons/right-arrow_white.svg)
+
+  &:active
+    background-color: #ffffff
+
+/* header */
+.header
+  position: relative
+  display: flex
+  justify-content: space-between
+  align-items: center
+  background-color: rgba(#4285F4,0.75)
+  border-bottom: 1px solid rgba(#ffffff, 0.12)
+  
+ 
+  &_scroll
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 100
+    border-bottom: 1px solid rgba(#ffffff, 0.12)
+    background-color: rgba(#2D2D2D,0.9)
+
+  &__logo
+    margin: 15px 20px
+
+  &__wrap
+    display: flex
+
+  &__select
+    margin-left: 10px
+    margin-right: 20px
+
+  &__buttons
+    display: none
+
+  &__toggle
+    display: none
+
+// select
+.select
+  position: relative
+  display: flex
+  flex-direction: column
+  width: 104px
+  font-size: 12px
+  font-weight: 700
+  color: #ffffff
+  line-height: 1
+  background-color: #4285F4
+  border: 2px solid rgba(#ffffff, 0.2)
+  border-radius: 20px
+  
+  &_open
+    border-radius: 20px 20px 0 0
+
+  &_scroll
+    background-color: #2D2D2D
+
+  &__current
+    padding: 9px 0
+    padding-left: 18px
+    padding-right: 35px
+    cursor: pointer
+    
+  &__img
+    display: inline
+    width: 16px
+    height: 12px
+    margin-right: 8px
+
+  &__arrow
+    position: absolute
+    top: 8px
+    right: 22px
+    margin-left: 8px
+    
+    &::before
+      content: ''
+      position: absolute
+      top: 3px
+      width: 8px
+      height: 8px
+      background-image: url(../img/icons/caret-down.svg)
+      background-repeat: no-repeat
+      background-position: center
+      background-size: contain
+
+    &_open
+      &::before
+        transform: rotate(180deg)
+
+  &__list
+    display: none
+    position: absolute
+    top: 30px
+    left: 50%
+    z-index: 2
+    width: 104px
+    padding: 5px 0
+    overflow: hidden
+    background-color: #4285F4
+    border: 2px solid rgba(#ffffff, 0.2)
+    border-top: none
+    border-bottom-left-radius: 20px
+    border-bottom-right-radius: 20px
+    transform: translateX(-50%)
+
+    &_open
+      display: block
+
+    &_scroll
+      background-color: #2D2D2D
+
+  &__item
+    
+    &:hover
+      background-color: rgba(#ffffff, 0.2)
+
+  &__link
+    display: block
+    padding: 10px 15px
+    color: #ffffff
+
+    &:hover
+      color: #ffffff
+      text-decoration: none
+  
+//menu
+.menu
+  margin-left: auto
+
+  &_footer
+    margin-left: 10%
+
+  &__list
+    display: flex
+    margin: 0 20px
+
+  &__item
+    margin: 0 20px
+
+  &__link
+    padding: 34px 0
+    color: #ffffff
+    transition: color 0.3s ease
+
+    &:hover
+      color: $accent
+      text-decoration: none
+      border-bottom: 2px solid $accent
+
+/* top */
+.top
+  position: relative
+  padding-top: 90px
+  padding-bottom: 130px
+  color: #ffffff
+
+  &__image
+    position: absolute
+    top: 50%
+    right: 0
+    transform: translateY(-50%) scale(0.8)
+    width: 623px
+    height: 627px
+
+  &__title
+    margin-bottom: 30px
+    font-size: 64px
+    font-weight: 700
+    text-transform: uppercase
+    line-height: 1.2
+
+  &__text
+    margin-bottom: 70px
+    font-size: 20px
+    line-height: 1.4
+
+    &_bottom
+      font-size: 13px
+
+  &__btn
+    margin-bottom: 20px
+
+  &__list
+    display: flex
+    flex-wrap: wrap
+    margin-top: 44px
+
+  &__item
+    margin-right: 45px
+
+.os
+  display: flex
+  align-items: center
+  opacity: 0.4
+
+  &__image
+    width: 33px
+    height: 33px
+    margin-right: 9px
+
+  &__text
+    line-height: 0.9
+    font-size: 10px
+
+  &__name
+    font-size: 16px
+    font-weight: 700
+
+/* middle */
+.middle
+  padding: 90px 0
+
+  &__block
+    display: flex
+    justify-content: space-between
+    margin-top: 70px
+
+    &_reverse
+      flex-direction: row-reverse
+
+  &__image
+    width: 35%
+
+  &__content
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    width: 57%
+
+    &-wrap
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+
+  &__number
+    width: 48px
+    height: 48px
+    margin-bottom: 20px
+    font-size: 30px
+    font-weight: 700
+    color: $title
+    text-align: center
+    line-height: 48px
+    background-color: $accent
+    border-radius: 50%
+
+  &__title
+    width: 100%
+    margin-bottom: 20px
+    font-size: 36px
+    font-weight: 700
+    color: $title
+    line-height: 1.2
+
+    &_open-block
+      font-size: 40px
+
+  &__text
+    width: 100%
+    font-size: 20px
+
+    a
+      color: #4987E9
+      text-decoration: none
+      transition: all 0.2s ease
+
+      &:hover
+        color: $accent
+        text-decoration: none
+
+  &__btn
+    position: relative
+    padding: 10px 65px 10px 40px
+    color: #4987E9
+    text-transform: none
+    background-color: #ECF3FE
+    box-shadow: none
+    
+    &:hover
+      color: #4987E9
+      background-color: #ECF3FE
+      box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.2)
+
+    &:active
+      box-shadow: none
+
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      right: 40px
+      width: 12px
+      height: 12px
+      background-image: url(../img/icons/arrow-down.svg)
+      transform: translateY(-40%)
+      transition: $slowdown
+
+    &_open
+      &::before
+        transition: $slowdown
+        transform: translateY(-40%) rotate(180deg)
+
+  &__open-block
+    margin: 70px 0
+    padding: 60px 100px
+    text-align: center
+    border: 4px solid #4987e9
+    border-radius: 40px
+
+.open-block
+  &__wrap
+    display: flex
+    flex-direction: column
+    align-items: center
+
+  &__images
+    position: relative
+    display: flex
+    justify-content: space-around
+    align-self: stretch
+
+    &::before
+      content: ''
+      position: absolute
+      bottom: -190px
+      left: 0
+      right: 0
+      height: 170px
+      background-image: url(../img/middle/arrows.png)
+      background-repeat: no-repeat
+      background-position: center
+      background-size: contain
+
+  &__image
+    width: 170px
+
+  &__image-main
+    margin-top: 60px
+
+/* surf */
+.surf
+  padding: 130px 0
+  background-color: #4285F4
+  background-image: url(../img/bg__surf.png)
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+
+  &__text
+    margin-bottom: 0
+    font-size: 48px
+    font-weight: 700
+    color: #ffffff
+    line-height: 1.2
+
+/* bottom */
+.bottom
+  max-width: 1920px
+  margin: 0 auto
+  padding: 100px 0
+
+  &__main-image
+    position: absolute
+    top: 50px
+    right: 0
+    width: 670px
+    height: 670px
+
+  &__wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-end
+
+  &__item
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    width: calc(50% - 60px)
+    margin-left: 60px
+    margin-top: 50px
+
+  &__image
+    width: 60px
+    height: 60px
+    margin-bottom: 20px
+
+  &__title
+    width: 100%
+    margin-bottom: 15px
+    font-size: 24px
+    font-weight: 700
+    color: $title
+
+  &__text
+    width: 100%
+    margin-bottom: 0
+    font-size: 18px
+    line-height: 1.5
+
+    &_bottom
+      font-size: 13px
+
+  &__btn
+    margin-bottom: 20px
+
+  &__block
+    margin-top: 55px
+    text-align: center
+
+/* download */
+.download
+  padding: 30px 0
+  background-color: #DFEBFF
+  background-image: url(../img/bg__mobile.png)
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+
+  &__wrap
+    padding: 70px 0
+    color: $title
+
+  &__title
+    margin-bottom: 10px
+    font-size: 50px
+    font-weight: 700
+    line-height: 1
+
+  &__text
+    margin-bottom: 40px
+    font-size: 30px
+
+  &__buttons
+    display: flex
+    flex-wrap: wrap
+
+  &__btn
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    width: 245px
+    margin-right: 20px
+    padding: 13px
+    padding-left: 75px
+    font-size: 10px
+    font-weight: 700
+    text-transform: uppercase
+    line-height: 1.1
+    background-color: #ffffff
+    box-shadow: none
+
+    span
+      font-size: 18px
+
+    &:hover
+      color: #ffffff
+      background-color: #272727
+
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 30px
+      width: 33px
+      height: 33px
+      background-repeat: no-repeat
+      background-position: center
+      background-size: contain
+      transform: translateY(-50%)
+
+    &_google
+      &::before
+        background-image: url(../img/icons/google.png)
+    &_app
+      &::before
+        background-image: url(../img/icons/ios.png)
+
+/* footer */
+.footer
+  background-color: #2D2D2D
+
+  &__wrap
+    display: flex
+    justify-content: space-between
+    align-items: center
+    min-height: 90px
+
+.footer-copyright
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 60px
+  background-color: #262626
+
+  &__text
+    font-size: 12px
+    color: #757575
+
+/* section modal */
+.overlay
+  display: block
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 200
+  overflow-y: scroll
+  background-color: rgba(#000000, 0.8)
+
+.modal
+  position: fixed
+  top: 50%
+  left: 50%
+  z-index: 300
+  width: 900px
+  overflow: hidden
+  background-color: #ffffff
+  border-radius: 15px
+  transform: translate(-50%, -50%)
+  
+.modal-top
+  &__head
+    display: flex
+    align-items: center
+    color: #ffffff
+    background-color: #2D2D2D
+    
+  &__logo
+    margin: 23px 40px 23px 30px
+
+  &__header
+    position: relative
+    padding: 10px 45px
+    font-size: 24px
+    font-weight: 500
+
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      height: 100%
+      width: 1px
+      background-color: #D8D8D8
+
+  &__body
+    padding: 40px
+
+  &__block
+    height: 330px
+    padding: 30px
+    overflow-y: scroll
+    color: #DDDDDD
+    background-color: #F7F7F7
+    border-radius: 3px
+
+  &__title
+    margin-bottom: 25px
+    font-size: 30px
+    font-weight: 700
+    color: $title
+
+    &_small
+      margin-bottom: 20px
+      font-size: 24px
+
+  &__text
+    margin-bottom: 30px
+    font-size: 16px
+    color: #909090
+    line-height: 1.75
+
+  &__buttons
+    display: flex
+    justify-content: space-between
+    padding: 40px
+    padding-top: 0
+
+.btn
+  &_cancel
+    font-size: 16px
+    color: #909090
+
+    &::hover
+      color: #494949!important
+
+  &_modal
+    width: 220px
+    margin: 30px 0
+    margin-right: 20px
+    background-color: #ECF3FE
+
+.modal-download
+  display: flex
+
+  &__image
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 35%
+    background-image: url(../img/bg_modal.png)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+
+    img
+      margin-right: -40px      
+
+  &__body
+    width: 65%
+    padding: 50px
+    padding-bottom: 30px
+
+  &__title
+    font-size: 30px
+    font-weight: 500
+    color: $title
+    line-height: 1.4
+
+.modal__close
+  position: absolute
+  top: 15px
+  right: 15px
+  width: 25px 
+  height: 25px
+  cursor: pointer
+  background: none
+  border: none
+
+  &::before, &::after
+    content: ''
+    position: absolute
+    left: 0
+    top: 10px
+    height: 3px
+    width: 25px
+    background-color: #909090
+
+  &::before
+    transform: rotate(45deg)
+
+  &::after
+    transform: rotate(-45deg)
+
+.hidden
+  display: none
+
+@import "media" // Always at the end
